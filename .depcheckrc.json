@@ -1,0 +1,13 @@
+{
+  "ignores": [
+    "depcheck",
+    "@types/*",
+    "@testing-library/*",
+    "postcss*",
+    "tailwindcss",
+    "stylelint*",
+    "typescript",
+    "pretty-quick"
+  ],
+  "skip-missing": true
+}
