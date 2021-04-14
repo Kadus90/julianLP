@@ -1,18 +1,20 @@
+import { FunctionComponent } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Navbar } from '../components/Navbar/Navbar';
 
-export default function Home() {
+const Home: FunctionComponent = () => {
   return (
-    <div className={styles.container}>
+    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <Head>
         <title>JulianLP</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <div>
-        <h1>hello world</h1>
-      </div>
+      <main>
+        <div>
+          <h1>hello world</h1>
+        </div>
+      </main>
     </div>
   );
-}
+};
+
+export default Home;
