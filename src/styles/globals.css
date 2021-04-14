@@ -2,3 +2,4 @@
 @import './vendors/tailwind.css';
 
 @import './base/base.css';
+@import './themes/base-theme.module.css';
