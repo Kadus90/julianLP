@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,7 +18,7 @@ const ThemeButton: FunctionComponent = () => {
     <FontAwesomeIcon
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       icon={symbol}
-      className={`mx-4 block ${height} cursor-pointer`}
+      className={`mx-4 block ${height} cursor-pointer transition duration-300 ease-in-out transform hover:scale-150`}
       color={`${color}`}
     ></FontAwesomeIcon>
   );

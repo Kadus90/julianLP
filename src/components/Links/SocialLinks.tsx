@@ -18,15 +18,20 @@ const SocialLinks: FunctionComponent<SocialLinksProps> = (props) => {
   return (
     <div className="flex items-center">
       {socialLinks.map((link) => (
-        <Link key={link.url} href={link.url}>
-          <a target="_blank" className="dark:text-cool-gray-100">
-            <FontAwesomeIcon
-              icon={link.icon}
-              className={`mx-4 block ${height}`}
-              color={`${color}`}
-            ></FontAwesomeIcon>
-          </a>
-        </Link>
+        <div key={link.url} className="group">
+          <Link href={link.url}>
+            <a
+              target="_blank"
+              className="dark:text-cool-gray-100 transform group-hover:text-cool-gray-400 "
+            >
+              <FontAwesomeIcon
+                icon={link.icon}
+                className={`mx-4 block ${height} transform group-hover:scale-150 transition duration-300 ease-in-out`}
+                color={`${color}`}
+              ></FontAwesomeIcon>
+            </a>
+          </Link>
+        </div>
       ))}
     </div>
   );
