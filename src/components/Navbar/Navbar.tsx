@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useContext } from 'react';
+import { FC, useState, useContext } from 'react';
 import Config from '../../config';
 import NavbarLink from './NavbarLink';
 import HamburgerMenu from './HamburgerMenu';
@@ -10,7 +10,7 @@ import ThemeButton from '../Buttons/ThemeButton';
 type NavbarProps = {
   showLinks?: boolean;
 };
-const Navbar: FunctionComponent<NavbarProps> = (props: NavbarProps) => {
+const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
   const { showLinks = true } = props;
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
   const { theme } = useTheme();

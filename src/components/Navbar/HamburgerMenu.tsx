@@ -1,12 +1,12 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 
 type HamburgerMenuProps = {
   handleOnTap: () => void;
 };
 
-const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = (props) => {
-  const { handleOnTap } = props;
-
+const HamburgerMenu: FC<HamburgerMenuProps> = ({
+  handleOnTap,
+}: HamburgerMenuProps) => {
   return (
     <button
       onClick={handleOnTap}

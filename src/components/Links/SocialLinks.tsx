@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import Config from '../../config';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHover } from '../../hooks/useHover';
 
 /**
  * @param color uses the tailwind text-color utility to define which color you want to apply to your social links
@@ -9,12 +10,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  */
 type SocialLinksProps = {
   color?: string;
-  height?: string;
+  height: string;
 };
 
-const SocialLinks: FunctionComponent<SocialLinksProps> = (props) => {
-  const { height = 'h-5', color } = props;
+const defaultProps = { height: 'h-5' };
+
+const SocialLinks: FC<SocialLinksProps> = ({
+  height,
+  color,
+}: SocialLinksProps & typeof defaultProps) => {
   const { socialLinks } = Config;
+  const classes = useHover(`mx-4 block ${height}`);
+
   return (
     <div className="flex items-center">
       {socialLinks.map((link) => (
@@ -26,7 +33,7 @@ const SocialLinks: FunctionComponent<SocialLinksProps> = (props) => {
             >
               <FontAwesomeIcon
                 icon={link.icon}
-                className={`mx-4 block ${height} transform group-hover:scale-150 transition duration-300 ease-in-out`}
+                className={classes}
                 color={`${color}`}
               ></FontAwesomeIcon>
             </a>
@@ -36,5 +43,7 @@ const SocialLinks: FunctionComponent<SocialLinksProps> = (props) => {
     </div>
   );
 };
+
+SocialLinks.defaultProps = defaultProps;
 
 export default SocialLinks;

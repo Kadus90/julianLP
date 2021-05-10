@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 
 export type NavbarLinkProps = {
@@ -8,7 +8,7 @@ export type NavbarLinkProps = {
   openInNewTab?: boolean;
 };
 
-const NavbarLink: FunctionComponent<NavbarLinkProps> = (props) => {
+const NavbarLink: FC<NavbarLinkProps> = (props) => {
   const { type = 'DESKTOP', href = '#', text, openInNewTab = false } = props;
 
   const getStylesForMobileLinks = (): string => {

@@ -1,7 +1,7 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
-const SiteLogo: FunctionComponent = () => {
+const SiteLogo: FC = () => {
   const { theme } = useTheme();
   const darkLogo = '/julianlp-logo-dark.png';
   const lightLogo = '/julianlp-logo-light.png';

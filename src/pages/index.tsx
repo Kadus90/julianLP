@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import Head from 'next/head';
 
-const Home: FunctionComponent = () => {
+const Home: FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <Head>
@@ -10,7 +10,7 @@ const Home: FunctionComponent = () => {
       </Head>
       <main>
         <div>
-          <h1>hello world</h1>
+          <p>hello world</p>
         </div>
       </main>
     </div>
