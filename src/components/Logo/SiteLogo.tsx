@@ -24,7 +24,7 @@ const SiteLogo: FunctionComponent = () => {
       {/* Logo for desktop */}
       <a href="/">
         <img
-          className="hidden lg:block h-32 w-auto"
+          className="hidden lg:block h-auto w-auto"
           src={theme === 'dark' ? darkLogo : lightLogo}
           alt="Workflow"
         />
