@@ -1,6 +1,6 @@
 export type PostMetadata = {
   id: string;
-  titile: string;
+  title: string;
   date: string;
   coverUrl: string;
   content: string;
