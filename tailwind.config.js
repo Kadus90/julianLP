@@ -1,7 +1,8 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     scale: {
@@ -20,7 +21,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...colors,
         'cool-gray': colors.coolGray,
+      },
+      screens: {
+        'dark-mode': { raw: '(prefers-color-scheme: dark)' },
       },
     },
   },
@@ -32,7 +37,14 @@ module.exports = {
       padding: ['hover'],
       scale: ['active', 'group-hover'],
       transform: ['hover', 'focus'],
+      transitionDuration: ['hover'],
+      transitionProperty: ['hover'],
+      typography: ['responsive', 'dark'],
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography')({
+      modifiers: [],
+    }),
+  ],
 };
