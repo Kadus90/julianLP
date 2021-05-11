@@ -10,15 +10,10 @@ import { useHover } from '../../hooks/useHover';
  */
 type SocialLinksProps = {
   color?: string;
-  height: string;
 };
 
-const defaultProps = { height: 'h-5' };
-
-const SocialLinks: FC<SocialLinksProps> = ({
-  height,
-  color,
-}: SocialLinksProps & typeof defaultProps) => {
+const SocialLinks: FC<SocialLinksProps> = ({ color }: SocialLinksProps) => {
+  const height = 'h-5';
   const { socialLinks } = Config;
   const classes = useHover(`mx-4 block ${height}`);
 
@@ -43,7 +38,5 @@ const SocialLinks: FC<SocialLinksProps> = ({
     </div>
   );
 };
-
-SocialLinks.defaultProps = defaultProps;
 
 export default SocialLinks;
