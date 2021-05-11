@@ -8,8 +8,6 @@ type TagListProps = {
 };
 
 const TagList: FC<TagListProps> = ({ tags, theme }: TagListProps) => {
-  console.log(tags);
-
   const tagArray = tags.map((tag, i) => {
     const classes = `text-white mr-2 rounded-lg py-1 px-2 text-sm ${getBackgroundClass(
       theme,
