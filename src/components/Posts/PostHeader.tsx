@@ -29,7 +29,7 @@ const PostHeader: FC<PostHeaderProps> = ({ post }: PostHeaderProps) => {
           className={`mr-2 h-4 ${getTextClass(post.theme)}`}
           icon={faTag}
         ></FontAwesomeIcon>
-        {post.tags && <TagList tags={post.tags}></TagList>}
+        {post.tags && <TagList tags={post.tags} theme={post.theme} />}
       </div>
       {/* SEPARATOR */}
       <div

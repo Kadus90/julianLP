@@ -13,6 +13,7 @@ type PostCardProps = {
   coverUrl: string;
   date: string;
   id: string;
+  theme: string;
 };
 
 const PostCard: FC<PostCardProps> = ({
@@ -22,6 +23,7 @@ const PostCard: FC<PostCardProps> = ({
   coverUrl,
   date,
   id,
+  theme,
 }: PostCardProps) => {
   const classes = useHover('w-full h-full', 'hover:scale-110');
 
@@ -34,7 +36,7 @@ const PostCard: FC<PostCardProps> = ({
           className="object-cover h-auto lg:h-44 w-full"
         />
         <div className="p-4 bg-white dark:bg-cool-gray-800">
-          <TagList tags={tags} />
+          <TagList tags={tags} theme={theme} />
           <h2 className="mt-2 mb-0 text-2xl font-semibold dark:text-cool-gray-100">
             {title}
           </h2>
