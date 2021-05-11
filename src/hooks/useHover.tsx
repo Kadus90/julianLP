@@ -1,6 +1,6 @@
-export function useHover(classes: string) {
-  const hoverScale =
-    'transition duration-300 ease-in-out transform hover:scale-150';
+export function useHover(classes: string, customScale?: string) {
+  const scale = customScale || 'hover:scale-150';
+  const hover = 'transition duration-300 ease-in-out transform';
 
-  return `${hoverScale} ${classes}`;
+  return `${hover} ${scale} ${classes} `;
 }
